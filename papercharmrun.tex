@@ -18,7 +18,13 @@
 %\usepackage{afterpage}
 %cmv
 
+\newcommand{\msr}[1]{\ensuremath{\rm MSR(#1)}\xspace}
 \newcommand{\msbar}{\ensuremath{\overline{\rm MS}}\xspace}
+
+\newcommand{\polem}[1][]{\ensuremath{m_{#1}^{\text{pole}}}\xspace}
+\newcommand{\msbarm}[1][]{\ensuremath{m_{#1}(m_{#1})}\xspace}
+\newcommand{\msrm}[1][]{\ensuremath{m_{#1}^{\text{MSR}}}\xspace}
+
 \newcommand{\dz}{\ensuremath{D^0}\xspace}
 \newcommand{\dch}{\ensuremath{D^{+}}\xspace}
 \newcommand{\dstar}{\ensuremath{D^{*+}}\xspace}
@@ -201,6 +207,7 @@ While the pole mass is plagued by the renormalon ambiguity uncertainty, the shor
 2) may be add a plot with comparison between m($\mu_R$) as a function of $\mu_R$, and M (constant) as a function of $\mu_R$ ? 
 \\
 \\
+
 3)...MNR and MCFM....
 \\
 \\
@@ -210,7 +217,7 @@ showing they give the same results
 \\
 
 \section{Predictions for differential cross-sections}
-\label{diffe}
+\label{diff}
 
 1) Comparisons between LO and NLO for a number of differential
 distributions (i.e. all possible kinds of $d\sigma/dX$ implemented in 
@@ -246,6 +253,191 @@ I have not a specific suggestion for a system of cuts, but, in general, the more
 4) One can try to use different scales. One could e.g. also try to use Czakon/Mitov suggested scales for top, and show how they work (or do not work) for bottom and charm. 
 \\
 \\
+--------------------------------------------------------------------------------------
+
+We compare the pole masses, \polem, with the \msbar masses, \msbarm, and MSR masses, $\msrm(R)$, for charm, bottom and top quarks in Table~\ref{tab:masses}.%
+\footnote{For the top quark masses, such comparison has been already presented in~\cite{Moch:2014tta}.}
+ The relations between the different masses are~\cite{Gray:1990yh,Chetyrkin:1999qi,Melnikov:2000qh,Hoang:2008yj}:
+\begin{equation}
+\begin{aligned}
+\polem &= {\msbarm} [ 1 + \Sigma^{\infty}_{n=1}d_n(\alpha_s/\pi)^n ],\\
+\polem &= \msrm(R) + R\Sigma^{\infty}_{n=1}a_n[\alpha_s(R)/(4\pi)]^n.
+\end{aligned}
+\label{eq:massrelation}
+\end{equation}
+The numerical coefficients $d_n$ and $a_n$ can be found in Refs.~\cite{Gray:1990yh,Chetyrkin:1999qi,Melnikov:2000qh} and Ref.~\cite{Hoang:2008yj}, respectively.
+%The scale dependence of the \msbar and MSR masses are given by:
+%\begin{equation}
+%\begin{aligned}
+%m(\mu) &= m(\mu_0)\frac{c(\alpha_s(\mu)/\pi)}{\alpha_s(\mu_0)/\pi},\\
+%{\msrm}(R) &= {\msrm}(R_0) -\int^{\ln R_1}_{\ln R_0} R\gamma_R[\alpha_s(R)] {\rm d} \ln R.
+%\end{aligned}
+%\label{eq:massrunning}
+%\end{equation}
+%The functions $c(x)$ and $\gamma_R(x)$ can be found in Ref.~\cite{Schmidt:2012az} and Ref.~\cite{Hoang:2008yj}, respectively.
+In the calculations, we use 3 light flavours when working with the charm and bottom quarks, and 5 light flavours when working with the top quark.
+The running of the \msbar heavy-quark masses is shown in Fig.~\ref{fig:mcmbmtrun} (left). It is calculated at one loop using the RunDec program~\cite{Schmidt:2012az}. The dependence of the MSR heavy-quark masses on $R$ at one loop is shown in Fig.~\ref{fig:mcmbmtrun} (right). 
+It is calculated according to the solution of the RGE equation~\cite{Hoang:2008yj}:
+\begin{equation}
+\begin{aligned}
+{\msrm}(R) &= {\msrm}(R_0) -\int^{\ln R_1}_{\ln R_0} R\gamma_R[\alpha_s(R)] {\rm d} \ln R.
+\end{aligned}
+\label{eq:massrunning}
+\end{equation}
+The function $\gamma_R(x)$ can be found in Ref.~\cite{Hoang:2008yj}. It is expanded to lowest non-vanishing order of $\alpha_s$.
+
+\begin{table}
+    \begin{tabular}{|ccc|c|ccc|ccc|}
+        \hline
+        \msr{1} & \msr{3} & \msr{9} & $m(m)$ & $m_{1\text{lp}}^{\text{pl}}$ & $m_{2\text{lp}}^{\text{pl}}$ & $m_{3\text{lp}}^{\text{pl}}$ & $m_{1\text{lp}}^{\text{pl}}$ & $m_{2\text{lp}}^{\text{pl}}$ & $m_{3\text{lp}}^{\text{pl}}$ \\
+        \hline
+        \multicolumn{10}{|c|}{top quark}\\
+        \hline
+        171.9 &        171.6 &        170.9 &        162.0 &        169.5 &        171.1 &        171.6 &        171.9 &        172.0 &        172.1 \\ 
+        172.9 &        172.6 &        172.0 &        163.0 &        170.5 &        172.2 &        172.7 &        172.9 &        173.1 &        173.2 \\ 
+        174.0 &        173.7 &        173.0 &        164.0 &        171.6 &        173.2 &        173.7 &        174.0 &        174.1 &        174.2 \\ 
+        \hline
+        \multicolumn{10}{|c|}{bottom quark}\\
+        \hline
+        4.73 &         4.31 &         3.61 &         4.15 &         4.60 &         4.83 &         4.99 &         4.68 &         4.89 &         5.07 \\ 
+        4.76 &         4.35 &         3.64 &         4.18 &         4.63 &         4.86 &         5.03 &         4.71 &         4.92 &         5.10 \\ 
+        4.80 &         4.38 &         3.68 &         4.21 &         4.66 &         4.89 &         5.06 &         4.75 &         4.96 &         5.13 \\ 
+        \hline
+        \multicolumn{10}{|c|}{charm quark}\\
+        \hline
+        1.33 &         0.91 &         0.21 &         1.25 &         1.50 &         1.72 &         2.02 &         1.28 &         1.49 &         1.67 \\ 
+        1.37 &         0.95 &         0.25 &         1.28 &         1.53 &         1.75 &         2.05 &         1.32 &         1.53 &         1.70 \\ 
+        1.40 &         0.99 &         0.28 &         1.31 &         1.56 &         1.78 &         2.07 &         1.36 &         1.57 &         1.74 \\ 
+        \hline
+    \end{tabular}
+    \caption{Numerical values for heavy-quark MSR, \msbar and pole masses. Columns 1--3 and 4 show the MSR masses at different scales and the \msbar mass, respectively. These values are converted at $O(\alpha_s^3)$ for $\alpha_s(M_Z)^{n_f=5} = 0.118$ ($\alpha_s(M_Z)^{n_f=3} = 0.106$) for top (charm, bottom) quarks. Columns 5--7 show the 1, 2 and 3 loop pole masses converted from the \msbar mass. Columns 8--10 show the 1, 2 and 3 loop pole masses converted from the MSR mass at $R=3$ GeV. All values are given in GeV.}
+    \label{tab:masses}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/mcmbmtrun.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/mcmbmtrun-msr.pdf}
+    \caption{(left) The running \msbar heavy-quark masses. (right) The dependence of the MSR heavy-quark masses on $R$. The values of $\mu$ and $R$ which are used in the calculations are marked with filled dots.}
+    \label{fig:mcmbmtrun}
+\end{figure}
+
+We computed double-differential cross sections as functions of $p_T$ and $y$ of the heavy quark ($Q$) and single-differential cross sections as a function of the invariant mass of the heavy quark pair in the pole, \msbar and MSR mass schemes at NLO $O(\alpha_s^3)$ using the MCFM~\cite{Campbell:1999ah,Campbell:2011bn} with modifications~\cite{Dowling:2013baa} and xFitter~\cite{Alekhin:2014irh} frameworks. In both cases, the original NLO calculations are done in the pole mass scheme~\cite{Mangano:1991jk}. These cross sections are converted to the \msbar or MSR mass schemes by expanding in $\alpha_s$, analogous to Ref.~\cite{Dowling:2013baa}:
+\begin{equation}
+\begin{aligned}
+\sigma(m(m)) =& \sigma(m^{\text{pole}})\bigg|_{m^{\text{pole}}=m(m)} + (m(m) - m^{\text{pole}})\left(\frac{{\rm d}\sigma^0}{{\rm d}m}\right)\bigg|_{m^{\text{pole}}=m(m)},\\
+\sigma(m^{\text{MSR}}) =& \sigma(m^{\text{pole}})\bigg|_{m^{\text{pole}}=m^{\text{MSR}}} + (m^{\text{MSR}} - m^{\text{pole}})\left(\frac{{\rm d}\sigma^0}{{\rm d}m}\right)\bigg|_{m^{\text{pole}}=m^{\text{MSR}}}.
+\end{aligned}
+\label{eq:conversion}
+\end{equation}
+Here $\sigma^0$ is the Born contribution to the cross section, and the differences $m(m) - m^{\text{pole}}$ and $m^{\text{MSR}} - m^{\text{pole}}$ are calculated to lowest non-vanishing  order in $\alpha_s$, such that all terms of $O(\alpha_s^4)$ are dropped in Eq.~\ref{eq:conversion}, as appropriate for a NLO calculation at $O(\alpha_s^3)$. The modified MCFM program~\cite{Dowling:2013baa} is capable to convert the pole mass NLO calculations into the \msbar mass scheme for single-differential cross sections as functions of $p_T$ of the heavy quark, $y$ of the heavy quark or invariant mass $M$ of the heavy-quark pair. The derivative of the Born contribution is calculated semi-analytically in MCFM~\cite{Dowling:2013baa}. xFitter converts the pole mass NLO cross sections into the the \msbar or MNR mass schemes for fully differential, but only one-particle inclusive, distributions, i.e.\ it is capable to compute the double differential cross section as a function of $p_T$ and $y$ of the heavy quark, but not as a function of the invariant mass of the heavy-quark pair. The derivative in Eq.~\ref{eq:conversion} is computed numerically in xFitter. The differential cross sections in different schemes which can be computed by MCFM and xFitter are summarised in Table~\ref{tab:xsec}. For cross sections in the pole mass scheme and for cross sections as a function of $p_T$ or $y$ in the \msbar mass schemes, the MCFM and xFitter calculations agree within percent accuracy [cite thesis of Lucas Kemmler].%
+\footnote{We note that while the MCFM and xFitter results (the latter are based on the MNR calculations~\cite{Mangano:1991jk}) calculated using $\mu_r=\mu_f$ agree within about $1\%$ for all heavy quarks, those charm production cross sections which are calculated using $\mu_r \ne \mu_f$ differ by about $10\%$ in some phase-space regions, in particular at low $p_T$ [cite thesis of Lucas Kemmler]. However, this level of agreement is satisfactory given that the NLO scale uncertainties are still larger by one order of magnitude.}
+
+\begin{table}
+\renewcommand*{\arraystretch}{1.5}
+\tabcolsep 0.025\textwidth
+\centering
+    \begin{tabular}{|c|ccc|}
+        \hline
+       Cross section & pole mass scheme & \msbar mass scheme & MSR mass scheme \\
+        \hline
+        ${{\rm d}\sigma}/{{\rm d}p_T}$ & M,X & M,X & X \\
+        ${{\rm d}\sigma}/{{\rm d}y}$ & M,X & M,X & X \\
+        ${{\rm d}\sigma}/{{\rm d}M}$ & M,X & M & -- \\
+        ${{\rm d}^2\sigma}/{{\rm d}p_T{\rm d}y}$ & M,X & X & X \\
+        \hline
+    \end{tabular}
+\caption{Summary of the capability of the MCFM (M) and xFitter (X) frameworks to compute differential cross sections for heavy-quark hadroproduction in different mass schemes.}
+\label{tab:xsec}
+\end{table}
+
+  In the calculations, we use the \msbar charm and bottom quark masses $m_c(m_c) = 1.28$~GeV and $m_b(m_b) = 4.18$~GeV~\cite{Tanabashi:2018oca}, and the \msbar top quark mass $m_t(m_t) = 163$~GeV~\cite{Aad:2019mkw,Hoang:2008yj}. For the pole and MSR masses, the corresponding values from Table~\ref{tab:masses} are used which are obtained by converting the \msbar masses into the MSR or pole masses. For MSR masses, the value of $R$ is chosen $R=3$ GeV for the bottom and top quarks, and $R=1$ GeV for the charm quark (to avoid using too small value of $\msrm[c]$ at $R=3$ GeV). 
+  For the pole masses, the values obtained by converting from the \msbar mass at one loop are chosen (column 5 in Table~\ref{tab:masses}).
+  The factorisation and renormalisation scales are set to $\mu_r = \mu_f = \sqrt{4m^2+p_T(Q)^2}$.
+  The proton is described by the ABMP16 NLO PDF set~\cite{Alekhin:2018pai}. 
+  To estimate the theoretical uncertainties, the factorisation and renormalisation scales are varied by a factor of two up and down, both simultaneously and independently for $\mu_r$ and $\mu_f$. All calculations are provided for pp collisions at the LHC at a centre-of-mass energy of $\sqrt{s} = 7$ TeV.
+
+In Fig.~\ref{fig:c-pty-mu} the NLO differential cross sections with their scale uncertainties as a function of $p_T$ in intervals of $y$ of the charm quark in the pole, \msbar and MSR mass schemes calculated using xFitter are shown. When using the \msbar or MSR mass scheme instead of the pole mass scheme, the changes of the cross sections amount to $0\textrm{--}35\%$, which are however small compared to the NLO scale uncertainties. The latter amount to a factor of $2$ in the bulk of the phase space, decreasing slightly towards large $p_T$ values. The scale uncertainties are very similar in all mass schemes.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr3/data_401-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-ptmax20/dyn-therr3-onlynom/data_401-1.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr3/data_401-2.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-ptmax20/dyn-therr3-onlynom/data_401-2.pdf}}\\
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr3/data_401-3.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-ptmax20/dyn-therr3-onlynom/data_401-3.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr3/data_401-4.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-ptmax20/dyn-therr3-onlynom/data_401-4.pdf}}
+    \caption{The NLO differential cross sections for charm production with their scale uncertainties as a function of $p_T$ in intervals of $y$ of the $c$ quark in the pole \msbar and MSR mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:c-pty-mu}
+\end{figure}
+
+In Fig.~\ref{fig:b-pty-mu} the same comparison of NLO differential cross sections in the various mass schemes is presented for bottom quark production. In this case, the impact of converting the pole mass calculations into the \msbar or MSR schemes is $0\textrm{--}25\%$ and is still small compared to the NLO scale uncertainties of the order of $50\%$. The scale uncertainties are similar in the pole and MSR mass schemes, while in the \msbar mass scheme they are slightly smaller at low $p_T$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr3/data_401-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-b/dyn-therr3-onlynom/data_401-1.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr3/data_401-2.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-b/dyn-therr3-onlynom/data_401-2.pdf}}\\
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr3/data_401-3.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-b/dyn-therr3-onlynom/data_401-3.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr3/data_401-4.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-b/dyn-therr3-onlynom/data_401-4.pdf}}
+    \caption{The NLO differential cross sections for bottom production with their scale uncertainties as a function of $p_T$ in intervals of $y$ of the $b$ quark in the pole, \msbar and MSR mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:b-pty-mu}
+\end{figure}
+
+Finally, in Fig.~\ref{fig:t-pty-mu} the same comparison is presented for top quark production. In this case, the impact of converting the pole mass calculations into the \msbar mass scheme is about $20\%$ at low $p_T$ which is no longer small compared to the NLO scale uncertainties. It decreases towards higher $p_T$ values. When converting the cross sections to the MSR mass scheme, the impact is below $<10\%$ and is within the NLO scale uncertainties. The scale uncertainties in the \msbar mass scheme are slightly smaller than in the pole mass scheme, as was already reported in Ref.~\cite{Dowling:2013baa}, while the scale uncertainties in the MSR and pole mass schemes are very similar.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/parton-t/dyn-therr3/data_401-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-t/dyn-therr3-onlynom/data_401-1.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/parton-t/dyn-therr3/data_401-2.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-t/dyn-therr3-onlynom/data_401-2.pdf}}\\
+    \includegraphics[width=0.49\textwidth]{figs/parton-t/dyn-therr3/data_401-3.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/parton-t/dyn-therr3-onlynom/data_401-3.pdf}}
+    \caption{The NLO differential cross sections for top production with their scale uncertainties as a function of $p_T$ in intervals of $y$ of the $t$ quark in the pole, \msbar and MSR mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:t-pty-mu}
+\end{figure}
+
+Furthermore, in Figs.~\ref{fig:c-pty-mass} and \ref{fig:b-pty-mass} we compare the theoretical uncertainties of the NLO calculations which arise due to quark mass variations of $m_c(m_c) = 1.28 \pm 0.03$~GeV and $m_b(m_b) = 4.18 \pm 0.03$~GeV~\cite{Tanabashi:2018oca} in the \msbar mass scheme, and $\polem[c] = 1.53 \pm 0.25$ GeV, $\polem[b] = 4.63 \pm 0.25$ GeV in the pole mass scheme. The latter variations reflect the fact that the pole mass is affected by an intrinsic uncertainty of the order of $\Lambda_{\text{QCD}}$. Therefore, calculations in the \msbar or MSR mass schemes afford substantially smaller uncertainties (in particular at low $p_T$) due to quark mass variations.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr-mass/data_401-1.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr-mass/data_401-2.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr-mass/data_401-3.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-ptmax20/dyn-therr-mass/data_401-4.pdf}
+    \caption{The NLO differential cross sections for charm production with their uncertainties due to mass variations as a function of $p_T$ in intervals of $y$ of the $c$ quark in the pole and \msbar mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:c-pty-mass}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr-mass/data_401-1.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr-mass/data_401-2.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr-mass/data_401-3.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/parton-b/dyn-therr-mass/data_401-4.pdf}
+    \caption{The NLO differential cross section for bottom production with their uncertainties due to mass variations as a function of $p_T$ in intervals of $y$ of the $b$ quark in the pole and \msbar mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:b-pty-mass}
+\end{figure}
+
+In Fig.~\ref{fig:cbt-m-mu} the single-differential cross sections as a function of the invariant mass of the heavy-quark pair in the pole and \msbar mass scheme calculated using MCFM are shown (no calculation in the MSR scheme is available for this distribution). The impact of changing the pole to \msbar mass scheme is largest at lowest values of $M$ close to the production threshold. This is because the lower values of the \msbar masses lead to lower threshold values and thus to a larger cross section near it. {\color{blue}\it SZ: is it really reasonable? In the \msbar mass scheme, should not one keep using *on-shell* mass as the kinematic mass of heavy quark (i.e.\ its four-momentum squared), and thus keeping the threshold at 2\polem?} Furthermore, as was noticed in Ref.~\cite{Dowling:2013baa}, very close to the production threshold the derivative term in Eq.~\ref{eq:conversion} becomes large and cause the invariant mass spectrum to dip below zero for values very close to the threshold, indicating the breakdown of fixed-order perturbation theory.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/figs-m/flav159/scheme01-muenv/data_999-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/figs-m/flav159/scheme01-muenv-onlynom/data_999-1.pdf}}
+    \includegraphics[width=0.49\textwidth]{figs/figs-m/flav158/scheme01-muenv/data_999-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/figs-m/flav158/scheme01-muenv-onlynom/data_999-1.pdf}}\\
+    \includegraphics[width=0.49\textwidth]{figs/figs-m/flav157/scheme01-muenv/data_999-1.pdf}
+    \put(-211,-44){\includegraphics[width=0.49\textwidth,trim=0 0 0 190,clip=true]{figs/figs-m/flav157/scheme01-muenv-onlynom/data_999-1.pdf}}
+    \caption{{\color{blue}\it SZ: These plots will be updated with larger statistics to smooth fluctuations.} The NLO differential cross sections for charm (top left), bottom (top right) and top (bottom) hadroproduction with their scale uncertainties as a function of the invariant mass of the heavy-quark pair in the pole and \msbar mass schemes at the LHC ($\sqrt{s} = 7$ TeV). The bottom panels display the theoretical predictions normalized to the values obtained in the pole mass scheme.}
+    \label{fig:cbt-m-mu}
+\end{figure}
 
 \section{Predictions for total cross-sections}
 \label{total}
@@ -354,7 +546,7 @@ The extrapolated cross sections and their ratios are compared to NNLO prediction
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{figs/plot5.pdf}
+    \includegraphics[width=1.0\textwidth]{figs/pdf-nnlo/plot5.pdf}
     \caption{Comparison of the extrapolated total charm production cross sections and their ratios with the NNLO theoretical predictions using different PDF sets.}
     \label{fig:extrap}
 \end{figure}
@@ -363,8 +555,8 @@ To demonstrate the feasibility of the provided observables to constrain the PDFs
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\textwidth]{figs/q2_10_pdf_g.pdf}
-    \includegraphics[width=0.49\textwidth]{figs/q2_100_pdf_g.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/pdf-nnlo/q2_10_pdf_g.pdf}
+    \includegraphics[width=0.49\textwidth]{figs/pdf-nnlo/q2_100_pdf_g.pdf}
     \caption{The gluon distribution of the original and profiled MMHT2014 set at $Q^2 = 10$~GeV$^2$ (left) and $Q^2 = 100$~GeV$^2$ (right).}
     \label{fig:extrap-profile}
 \end{figure}
