@@ -1,0 +1,17 @@
+\documentclass[multi=figure]{standalone}
+\usepackage{graphicx}
+
+\makeatletter
+\renewenvironment{figure}%
+{\def\@captype{figure}%
+\minipage{\textwidth}}%
+{\endminipage}
+\makeatother
+
+\let\efloatseparator=\empty
+
+\renewcommand{\caption}[2][default]{\ignorespaces}
+
+\begin{document}
+\input{combine-figures-t.fff}
+\end{document}
