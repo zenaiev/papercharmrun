@@ -449,6 +449,102 @@ m_b(m_b) &= 3.98 \pm 0.14 ~\textrm{GeV},~~~~~~~~ &m_b^{\textrm{pole}} &= 4.19 \p
 The quoted uncertainties are fit uncertainties only.
 The \msbar masses are compatible with the results obtained in Refs.~\cite{Abramowicz:1900rp,Abramowicz:2014zub,Bertone:2016ywq,H1:2018flt} where the HERA data alone were analysed to determine the heavy-quark \msbar masses. They are also in a better agreement with the world average values~\cite{Tanabashi:2018oca}, than the pole masses, indicating that the latter carry a significant intrinsic theoretical uncertainty.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{ttbar.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Extraction of \msbarm[t] and \msrm[t] from differential $t\bar{t}$ cross sections at NLO}
+The mass of the top quark can be extracted using measurements of total or differential $t\bar{t}$ production cross sections. As an example, we use the recent CMS measurement~\cite{Sirunyan:2019zvx} of normalised triple-differential $t\bar{t}$ cross sections as a function of invariant mass and rapidity of the $t\bar{t}$ pair, and the number of additional jets, to extract the values of \msbarm[t] and \msrm[t] in a simultaneous fit with $\alpha_s$ and PDFs, and compare the results with the ones obtained in the CMS analysis~\cite{Sirunyan:2019zvx}. These observables provide decent sensitivity to the top quark mass, $\alpha_s$ and PDFs, i.e. to the complete set of input theoretical parameters of fixed-order calculations for stable top quark pair production. In particular, the distributions of $t\bar{t}$ invariant mass and additional jet multiplicity are sensitive to the top quark mass through threshold and cone effects~\cite{Alioli:2013mxa}.
+
+The QCD analysis setup follows the original CMS analysis~\cite{Sirunyan:2019zvx}, and the detailed description of the fitting procedure can be found in Section~10 of Ref.~\cite{Sirunyan:2019zvx}, while below only the main settings are summarised. The QCD analysis is done using the xFitter framework~\cite{Alekhin:2014irh}. Theoretical predictions for the $t\bar{t}$ data are obtained at NLO in the pole mass scheme using the MadGraph5\_aMC@NLO program~\cite{Alwall:2014hca}, interfaced with aMCfast~\cite{Bertone:2014zva} and ApplGrid~\cite{Carli:2010rw} to store the calculated cross sections bin-by-bin in the format which is suitable for PDF fits with xFitter. The dependence of the theoretical predictions on the top quark mass is taken into account by generating several sets of predictions with different values of this parameter and smoothly interpolating them in the fit. The HERA DIS data~\cite{Abramowicz:2015mha} are included in the fit to provide constraints on the valence and sea quark distributions and probe the gluon distribution and $\alpha_s$ through scaling violations, while the CMS $t\bar{t}$ provide direct constraints on the gluon PDF and $\alpha_s$, as well as on the top quark mass as discussed in Ref.~\cite{Sirunyan:2019zvx}. Further details can be found in Ref.~\cite{Sirunyan:2019zvx}.
+
+In our analysis, we convert the NLO calculations for $t\bar{t}$ production cross sections from the pole mass scheme into the \msbar or MSR mass schemes according to Eq.~\ref{eq:conversion}. Because the calculated cross sections are stored in ApplGrid tables as bin integrated cross sections, it is not possible to use a dynamic scale $\mu_r = \mu_f = H'$ defined as one half of the sum of transverse masses of the final-state partons (see Section~9 of Ref.~\cite{Sirunyan:2019zvx}), since $H'$ is not constant within the bin. Instead, we use a static scale $\mu_r = \mu_f = m_t$, and we also repeat the extraction of the pole mass with this scale choice.
+As the analysis of triple-differential $t\bar{t}$ cross sections requires NLO predictions for not only inclusive $t\bar{t}$ production of $O(\alpha_s^3)$, but also for inclusive $t\bar{t}+1$ jet production of $O(\alpha_s^4)$, MadGraph5\_aMC@NLO is the only public code we know which provides such calculations and is interfaced to ApplGrid.
+
+The fit results obtained using different mass schemes are given in Table~\ref{tab:mtfit}. The values of $\chi^2$ characterise fit quality. These values are very similar in all fit variants and illustrate good description of the $t\bar{t}$ data. To estimate uncertainties, we follow the procedure from Ref.~\cite{Sirunyan:2019zvx} and determine fit, model, parametrisation and scale variation uncertainties. As in the CMS analysis, the scales are varied coherently in all bins of the measured cross sections.
+In the pole mass scheme, switching from the dynamic scale to the static scale changes the extracted pole mass by about $0.5$ GeV, but further enlarges the scale uncertainties substantially. Therefore, the larger scale uncertainties obtained in this analysis using the \msbar or MSR mass schemes, as compared to Ref.~\cite{Sirunyan:2019zvx}, are explained by the usage of the static scale in the calculations. Switching to the \msbar or MSR mass scheme does not affect the scale uncertainties anymore. In the light of this observation, it will be worth to develop the transition to the other mass schemes in the MadGraph5\_aMC@NLO program directly, such that predictions for differential $t\bar{t}$ cross sections in association with jets can be obtained in the format which is suitable for PDF fits in different mass schemes and with dynamic scales. Furthermore, we do not observe any noticeably larger theoretical uncertainty when using the \msbar running mass instead of the pole mass, as was reported in Refs.~\cite{Fuster:2017rev,Aad:2019mkw}. Switching from the pole mass scheme to the MSR mass scheme with $R=3$ GeV changes the extracted mass value by $0.3$ GeV only which is well within the current experimental and theoretical uncertainties.
+
+\if 0
+\begin{landscape}
+\begin{table}
+    \setlength{\tabcolsep}{1pt}
+    \renewcommand{\arraystretch}{1.35}
+    \small
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Settings & $m_t$ [GeV] & $\alpha_s$ & $\chi^2$ \\
+        \hline
+
+        pole mass, & \multirow{3}{*}{$\polem[t] = 170.5 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.1} (\text{par}) \pm 0.3 (\mu)$} & \multirow{3}{*}{$0.1135 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0004} (\text{mod}) {}^{+0.0008}_{-0.0001} (\text{par}) {}^{+0.0011}_{-0.0005} (\mu)$} & \multirow{3}{*}{$1364$}\\
+        $\mu_r = \mu_f = H'$ & & & \\
+        Ref.~\cite{Sirunyan:2019zvx} & & & \\
+        \hline
+
+        pole mass, & \multirow{3}{*}{$\polem[t] = 169.9 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$} & \multirow{3}{*}{$0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0003}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$} & \multirow{3}{*}{$1363$}\\
+        $\mu_r = \mu_f = m_t$ & & & \\
+        this work & & & \\
+        \hline
+
+        \msbar mass, & \multirow{3}{*}{$\msbarm[t] = 161.0 \pm 0.6 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.4}_{-0.8} (\mu)$} & \multirow{3}{*}{$0.1136 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0005} (\text{mod}) {}^{+0.0002}_{-0.0001} (\text{par}) {}^{+0.0015}_{-0.0009} (\mu)$} & \multirow{3}{*}{$1363$}\\
+        $\mu_r = \mu_f = m_t$ & & & \\
+        this work & & & \\
+        \hline
+
+        MSR mass ($R=3$ GeV), & \multirow{3}{*}{$\msrm[t] = 169.6 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$} & \multirow{3}{*}{$0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0002}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$} & \multirow{3}{*}{$1363$}\\
+        $\mu_r = \mu_f = m_t$ & & & \\
+        this work & & & \\
+        
+        \hline
+    \end{tabular}
+    \caption{The values of top quark mass in different mass scheme and $\alpha_s$ obtained in Ref.~\cite{Sirunyan:2019zvx} and this work in the fit to the CMS data on $t\bar{t}$ production and HERA DIS data. The fit, model (mod), parametrisation (par) and scale variation ($\mu$) uncertainties are reported. Also the values of $\chi^2$ are reported.}
+    \label{tab:mtfit}
+\end{table}
+\end{landscape}
+\fi 
+
+\begin{table}
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.35}
+    %\small
+    \begin{tabular}{|l|l|}
+        \hline
+        Settings & Fit results \\
+        \hline
+        
+        pole mass, & $\chi^2 = 1364$, $\chi^2_{t\bar{t}} = 20$\\
+        $\mu_r = \mu_f = H'$, & $\polem[t] = 170.5 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.1} (\text{par}) \pm 0.3 (\mu)$ GeV \\
+        Ref.~\cite{Sirunyan:2019zvx} & $\alpha_s = 0.1135 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0004} (\text{mod}) {}^{+0.0008}_{-0.0001} (\text{par}) {}^{+0.0011}_{-0.0005} (\mu)$ \\
+        \hline
+        
+        pole mass, & $\chi^2 = 1363$, $\chi^2_{t\bar{t}} = 19$\\
+        $\mu_r = \mu_f = m_t$, & $\polem[t] = 169.9 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$ GeV \\
+        this work & $\alpha_s = 0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0003}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$ \\
+        \hline
+        
+        \msbar mass, & $\chi^2 = 1363$, $\chi^2_{t\bar{t}} = 19$\\
+        $\mu_r = \mu_f = m_t$, & $\msbarm[t] = 161.0 \pm 0.6 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.4}_{-0.8} (\mu)$ GeV \\
+        this work & $\alpha_s = 0.1136 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0005} (\text{mod}) {}^{+0.0002}_{-0.0001} (\text{par}) {}^{+0.0015}_{-0.0009} (\mu)$ \\
+        \hline
+        
+        MSR mass ($R=3$ GeV), & $\chi^2 = 1363$, $\chi^2_{t\bar{t}} = 19$\\
+        $\mu_r = \mu_f = m_t$, & $\msrm[t] = 169.6 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$ GeV \\
+        this work & $\alpha_s = 0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0002}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$ \\
+        
+        \hline
+    \end{tabular}
+    \caption{The values of top quark mass in different mass scheme and $\alpha_s$ obtained in Ref.~\cite{Sirunyan:2019zvx} and this work in the fit to the CMS data on $t\bar{t}$ production and HERA DIS data. The fit, model (mod), parametrisation (par) and scale variation ($\mu$) uncertainties are reported. Also the values of $\chi^2$ are reported, as well as the partial $\chi^2$ values for $t\bar{t}$ data ($\chi^2_{t\bar{t}}$) for $23$ $t\bar{t}$ cross section bins in the fit.}
+    \label{tab:mtfit}
+\end{table}
+
+The extracted value of $\msbarm[t]$ is compared with several other determinations in Fig.~\ref{fig:mtmt}.
+In the ABMP16 analysis, the running top quark mass was determined from measurements of total top quark pair and single top production cross sections in a global QCD fit at NNLO~\cite{Alekhin:2017kpj}. In Ref.~\cite{Aad:2019mkw} ATLAS extracted \msbarm[t] at NLO from their measurement of $t\bar{t}+1$ jet production cross sections. In Ref.~\cite{Fuster:2017rev} Fuster at al. extracted \msbarm[t] at NLO using the Run-1 ATLAS measurement of $t\bar{t}+1$ jet production~\cite{Aad:2015waa}. Currently, the world average value of \msbarm[t]~\cite{Tanabashi:2018oca} is based on a single determination of this parameter by the D0 collaboration at approximate NNLO~\cite{Abazov:2011pta}. When comparing to the other determinations of $\msbarm[t]$ displayed in Fig.~\ref{fig:mtmt}, it is worthy of attention that only the results of this work and ABMP16 analysis are obtained in a simultaneous fit of $\msbarm[t]$, $\alpha_s$ and PDFs, while the other determinations were done using a given value of $\alpha_s$ and PDF set.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/mtmt.pdf}
+    \caption{The extracted value of $\msbarm[t]$ compared to other determinations. `ATLAS Run-1, NLO' refers to the extraction of \msbarm[t] by Fuster et al.~\cite{Fuster:2017rev} using the Run-1 ATLAS measurement of $t\bar{t}+1$ jet production. The world average `PDG2018, appr. NNLO' is based on a single determination of the D0 collaboration~\cite{Abazov:2011pta}.}
+    \label{fig:mtmt}
+\end{figure}
+
 \subsection{NNLO PDF fits with total charm hadroproduction cross section}
 %\\
 %\\
@@ -566,7 +662,7 @@ This work is partially supported by grants.....
 \newpage
 
 \bibliographystyle{JHEP} 
-\bibliography{papercharmrun}
+\bibliography{papercharmrun,ttbar}
 
 \end{document}
 
