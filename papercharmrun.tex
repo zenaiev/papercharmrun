@@ -463,44 +463,6 @@ As the analysis of triple-differential $t\bar{t}$ cross sections requires NLO pr
 The fit results obtained using different mass schemes are given in Table~\ref{tab:mtfit}. The values of $\chi^2$ characterise fit quality. These values are very similar in all fit variants and illustrate good description of the $t\bar{t}$ data. To estimate uncertainties, we follow the procedure from Ref.~\cite{Sirunyan:2019zvx} and determine fit, model, parametrisation and scale variation uncertainties. As in the CMS analysis, the scales are varied coherently in all bins of the measured cross sections.
 In the pole mass scheme, switching from the dynamic scale to the static scale changes the extracted pole mass by about $0.5$ GeV, but further enlarges the scale uncertainties substantially. Therefore, the larger scale uncertainties obtained in this analysis using the \msbar or MSR mass schemes, as compared to Ref.~\cite{Sirunyan:2019zvx}, are explained by the usage of the static scale in the calculations. Switching to the \msbar or MSR mass scheme does not affect the scale uncertainties anymore. In the light of this observation, it will be worth to develop the transition to the other mass schemes in the MadGraph5\_aMC@NLO program directly, such that predictions for differential $t\bar{t}$ cross sections in association with jets can be obtained in the format which is suitable for PDF fits in different mass schemes and with dynamic scales. Furthermore, we do not observe any noticeably larger theoretical uncertainty when using the \msbar running mass instead of the pole mass, as was reported in Refs.~\cite{Fuster:2017rev,Aad:2019mkw}. Switching from the pole mass scheme to the MSR mass scheme with $R=3$ GeV changes the extracted mass value by $0.3$ GeV only which is well within the current experimental and theoretical uncertainties.
 
-\if 0
-\begin{landscape}
-\begin{table}
-    \setlength{\tabcolsep}{1pt}
-    \renewcommand{\arraystretch}{1.35}
-    \small
-    \begin{tabular}{|l|l|l|l|}
-        \hline
-        Settings & $m_t$ [GeV] & $\alpha_s$ & $\chi^2$ \\
-        \hline
-
-        pole mass, & \multirow{3}{*}{$\polem[t] = 170.5 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.1} (\text{par}) \pm 0.3 (\mu)$} & \multirow{3}{*}{$0.1135 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0004} (\text{mod}) {}^{+0.0008}_{-0.0001} (\text{par}) {}^{+0.0011}_{-0.0005} (\mu)$} & \multirow{3}{*}{$1364$}\\
-        $\mu_r = \mu_f = H'$ & & & \\
-        Ref.~\cite{Sirunyan:2019zvx} & & & \\
-        \hline
-
-        pole mass, & \multirow{3}{*}{$\polem[t] = 169.9 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$} & \multirow{3}{*}{$0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0003}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$} & \multirow{3}{*}{$1363$}\\
-        $\mu_r = \mu_f = m_t$ & & & \\
-        this work & & & \\
-        \hline
-
-        \msbar mass, & \multirow{3}{*}{$\msbarm[t] = 161.0 \pm 0.6 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.4}_{-0.8} (\mu)$} & \multirow{3}{*}{$0.1136 \pm 0.0016 (\text{fit}) {}^{+0.0002}_{-0.0005} (\text{mod}) {}^{+0.0002}_{-0.0001} (\text{par}) {}^{+0.0015}_{-0.0009} (\mu)$} & \multirow{3}{*}{$1363$}\\
-        $\mu_r = \mu_f = m_t$ & & & \\
-        this work & & & \\
-        \hline
-
-        MSR mass ($R=3$ GeV), & \multirow{3}{*}{$\msrm[t] = 169.6 \pm 0.7 (\text{fit}) \pm 0.1 (\text{mod}) {}^{+0.0}_{-0.0} (\text{par}) {}^{+0.3}_{-0.9} (\mu)$} & \multirow{3}{*}{$0.1132 \pm 0.0016 (\text{fit}) {}^{+0.0003}_{-0.0004} (\text{mod}) {}^{+0.0002}_{-0.0000} (\text{par}) {}^{+0.0016}_{-0.0008} (\mu)$} & \multirow{3}{*}{$1363$}\\
-        $\mu_r = \mu_f = m_t$ & & & \\
-        this work & & & \\
-        
-        \hline
-    \end{tabular}
-    \caption{The values of top quark mass in different mass scheme and $\alpha_s$ obtained in Ref.~\cite{Sirunyan:2019zvx} and this work in the fit to the CMS data on $t\bar{t}$ production and HERA DIS data. The fit, model (mod), parametrisation (par) and scale variation ($\mu$) uncertainties are reported. Also the values of $\chi^2$ are reported.}
-    \label{tab:mtfit}
-\end{table}
-\end{landscape}
-\fi 
-
 \begin{table}
     \setlength{\tabcolsep}{3pt}
     \renewcommand{\arraystretch}{1.35}
